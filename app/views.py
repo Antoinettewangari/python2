@@ -77,6 +77,17 @@ def logout_user(request):
     logout(request)
     return redirect('app:login')
 
+def update_album(request,album_id):
+    album=get_object_or_404(Album,pk=album_id)
+    form=AlbumForm(request.POST or None ,request.FILES or None,instance=album)
+    if form.is_valid():
+        album=form.save()
+        return redirect('app:index')
+
+
+
+    return render(request,'app/add_album.html',{'form':form})
+
 
 
 

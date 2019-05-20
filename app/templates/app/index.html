@@ -13,7 +13,7 @@
                     <div class="caption" style="margin=3px;">
                         <h5>{{album.name}}</h5>
                         <h6>{{album.artist}}</h6>
-                        <a href="" class="btn btn-primary btn-sm">
+                        <a href="{% url 'app:update-album' album.id %}" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit"></i>
                         </a>
                         <a href="" class="btn btn-secondary btn-sm">
